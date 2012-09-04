@@ -1,0 +1,23 @@
+head
+	include ../includes/bootstrap
+	include ../includes/jquery
+body
+	div.container
+		div.content
+			div.page-header
+				h1 Hey there #{user.name.givenName} !
+			div.row
+				div.span12
+					h3 What would you like to do?
+				div(style='text-align:center').row
+					div.span6
+						form.well
+							h5 Invite your contacts to a Twillio powered conference call
+							a(href='#createMeeting')(role='button')(data-toggle='modal').btn.btn-primary Create a Meeting
+					div.span6
+						form.well
+							h5 Make changes and review upcoming and past meetings
+							a(href='#createMeeting')(role='button')(data-toggle='modal').btn.btn-primary Review Existing Meetings
+				
+				
+

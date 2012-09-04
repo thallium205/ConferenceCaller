@@ -1,0 +1,61 @@
+var Meetings = require('../models/meetings');
+
+// GET /mettings/:id
+exports.list = function(req, res, next)
+{
+	Meetings.getAllByUserId(req.params.id, function (err, meetings)
+	{
+		if (err)
+		{
+			return next(err);
+		}
+
+		res.send({meetings: meetings});
+	});
+}
+
+// POST /meetings/:id
+exports.create = function(req, res, next)
+{
+	// Use the google id in the req for the id for safety TODO
+	Meetings.create({userId: req.body['userId'], time: req.body['time'], people: req.body['people']}, function (err, meeting)
+	{
+		if (err)
+		{
+			return next(err);
+		}
+
+		// Email the people TODO
+		res.send({meetingId: meetingId});
+	});	
+}
+
+// POST /meetings/:id
+exports.edit = function(req, res, next)
+{
+	// Use the google id in the req for the id for safety TODO
+	Meetings.edit({userId: req.body['userId'], time: req.body['time'], people: req.body['people']}, function (err, meeting)
+	{
+		if (err)
+		{
+			return next(err);
+		}
+		
+		// Email the people TODO
+		res.send({meetingId: meetingId});		
+	});	
+}
+
+// GET /meetings/:id
+exports.del = function (req, res, next)
+{
+	// Use the google id in the req for the id for safety TODO
+	Meetings.del({userId: req.body['userId'], meetingId: req.body['meetingId']}, function (err)
+	{
+		if (err)
+		{
+			return next(err);
+		}
+	}
+	res.redirect('/dashboard');
+}

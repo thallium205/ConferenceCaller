@@ -1,0 +1,13 @@
+head
+	include ../includes/bootstrap
+body
+	div.container
+		div.content
+			div.page-header
+				h1 Welcome to the Twillio Super Conference App!
+			div.row
+				div(style='text-align:center').span12
+					h3 Schedule and remind participants of future conference calls!
+					button(onClick='location.href=\'/auth/google\'').btn.btn-primary Get Started
+
+

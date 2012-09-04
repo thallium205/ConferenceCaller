@@ -1,0 +1,6 @@
+doctype 5
+html
+  head
+    contacts = contacts
+  body
+    block content

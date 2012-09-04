@@ -124,7 +124,7 @@ var Meeting = module.exports =
 							var participants = JSON.parse(rows[0].people);
 							for (i = 0; i < participants.length; i++)
 							{
-								if (participants[i].phone !== undefined)
+								if (participants[i].phone !== undefined && participants[i].phone !== 'N/A')
 								{
 									console.log('Calling participant: ' + participants[i].name + ' at ' + participants[i].phone); 
 									app.makeCall("+17752374594", participants[i].phone, function(err, call) 

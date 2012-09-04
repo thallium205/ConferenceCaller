@@ -1,3 +1,0 @@
-link(rel='stylesheet', href='/stylesheets/datepicker.css') 
-script(src='/javascripts/bootstrap-datepicker.js')
-script(src='/javascripts/bootstrap-timepicker.js')
